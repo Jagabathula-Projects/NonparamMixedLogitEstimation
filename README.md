@@ -1,5 +1,5 @@
 # NonparamMixedLogitEstimation
-This folder contains code of the nonparameteric estimator for the mixed logit model proposed in the [A conditional gradient approach for nonparametric estimation of mixing distributions](https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3373) paper.
+Code implementing the nonparameteric estimator for the mixed logit model proposed in the [A conditional gradient approach for nonparametric estimation of mixing distributions](https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3373) paper.
 
 ## How to run
 `python run_estimator.py`
