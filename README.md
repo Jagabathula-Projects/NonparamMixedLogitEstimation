@@ -12,11 +12,12 @@ The version provided here is for the case without product features, i.e., the ut
 ## Estimator description
 The code for the estimator is in `frank_wolf_lc_mnl.py`. The class variable *mix_props* stores the mixing proportions in a 1-d array and the variable *coefs_* stores the beta parameters in a 2-d array, such that the entry in row $k$ and column $j$ corresponds to $\beta_{kj}$. Other variables are described in the file.
 
-The main method in the estimator is `fit_to_choice_data()`, which takes as input the membership matrix (binary matrix that encodes whether a product is offered in each offerset) and the number of sales for each product in each offerset. We transform the data from the provided input file to this format. See the documentation of the `fit_to_choice_data()` for more details on the input format. The following arguments to the `fit_to_choice_data()` method can be modified based on the application:
+The main method in the estimator is `fit_to_choice_data()`, which takes as input the membership matrix (binary matrix that encodes whether a product is offered in each offerset) and the number of sales for each product in each offerset. We transform the data from the provided input file to this format; refer the documentation for more details on the input format. The following arguments to the `fit_to_choice_data()` method can be modified based on the application:
 
 1. *num_iters* : this is the number of iterations to run the estimation for. As mentioned in the paper, this provides an upper bound for the number of latent classes in the estimated LC-MNL model.
 2. *init_coefs* and *init_mix_props*: the initial betas and mixture proportions. 
 
+## Out-of-sample choice predictions
 After estimating the model, you should use the `predict_choice_proba()` function to predict choice probabilities on out-of-sample-transactions, which are also provided in the example instance *test_instance.dt*. An example of how to do this is provided in the *run_estimator.py* file.
 
 ## Dependencies
