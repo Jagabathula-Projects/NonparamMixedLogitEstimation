@@ -1,13 +1,12 @@
 # NonparamMixedLogitEstimation
-Code implementing the nonparameteric estimator for the mixed logit model proposed in the [A conditional gradient approach for nonparametric estimation of mixing distributions](https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3373) paper.
+Code implementing the nonparametric estimator for the mixed logit model proposed in the [A conditional gradient approach for nonparametric estimation of mixing distributions](https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3373) paper.
 
 ## How to run
 `python run_estimator.py`
-We use python 3. The file reads the data in the json format given in the example input file ${\tt test_instance.dt}$ and fits a latent class logit model (aka LC-MNL model) on the in-sample transactions provided in the input file.
+We use python 3. The file reads the transactions data in json format given in the example input file ${\tt test_instance.dt}$, and then fits a latent class logit model (aka LC-MNL model) on the in-sample transactions provided in the input file.
 
 ## Utility model
-The version provided here considers the special case when there are no product features, i.e. the utility of customer i in class k for product j is of the form $\beta_{kj} + \epsilon_{ij}$, where $\epsilon_{ij}$ is the error term and $\beta_{kj}$ is the mean utility. 
-So the output for a $K$ class model with $n$ products consists of the mixing proportions $q_1, q_2, \ldots, q_K$ and the mean utilities $(\beta_{kj} : \forall k \in [K], j \in [n])$.
+The version provided here is for the case without product features, i.e., the utility of customer $i$ in class $k$ for product $j$ is of the form $\beta_{kj} + \epsilon_{ij}$, where $\epsilon_{ij}$ is the error term and $\beta_{kj}$ is the mean utility. So the output for a $K$ class model with $n$ products consists of the mixing proportions $q_1, q_2, \ldots, q_K$ and the mean utilities $(\beta_{kj} : \forall k \in [K], j \in [n])$.
 
 ## Estimator description
 The code for the estimator is in `frank_wolf_lc_mnl.py`. The class variable ${\tt mix_props}$ stores the mixing proportions in a 1-d array and the variable ${\tt coefs_}$ stores the beta parameters in a 2-d array, such that the entry in row $k$ and column $j$ corresponds to $\beta_{kj}$. Other variables are described in the file.
